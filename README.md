@@ -24,5 +24,5 @@ The Jenkinsfile is used for defining the Jenkins pipeline, automating the build 
 ## Pipeline Stages
 
 The Jenkins pipeline consists of the following stages:
-  1. ## Build Stage: ### Builds the application and creates artifacts.
-  2. ## Deploy Stage: ### Deploys the application to the target environment.
+  1. Build Stage: Builds the application and creates artifacts.
+  2. Deploy Stage: Deploys the application to the target environment.
