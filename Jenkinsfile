@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/itkarank/react-pro/my-app/'
+                git branch: 'main', url: 'https://github.com/madhunath/project2/'
             }
         }
 
@@ -16,8 +16,8 @@ pipeline {
                     withDockerRegistry(credentialsId: '4dc60544-f54b-48cd-ad44-bd685badc389', toolName: 'react-pro') {
                         
                         sh "docker build -t react-pro -f Dockerfile ."
-                        sh "docker tag  react-pro karan143/react-pro:latest"
-                        sh "docker push karan143/react-pro:latest"
+                        sh "docker tag  react-pro madhunath/react-app:latest"
+                        sh "docker push madhunath/react-app:latest"
                     }
                 }
             }
@@ -27,11 +27,10 @@ pipeline {
             steps {
                 script {
                 withDockerRegistry(credentialsId: '4dc60544-f54b-48cd-ad44-bd685badc389', toolName: 'react-pro') {
-                    sh "docker run -d --name react-pro -p 8070:8070 karan143/react-pro:latest" }
+                    sh "docker run -d --name react-app -p 3000:3000 madhunath/react-app:latest" }
                 }
                 
             }
         }
     }
 }
-
