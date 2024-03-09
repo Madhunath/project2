@@ -1,0 +1,282 @@
+
+
+.course-img {
+    transition: transform 0.4s;
+  }
+  .sec4-cards:hover .course-img{
+    transform: scale(1.1);
+  }
+  .course-line1{
+    height: 2px;
+    width: 40px;
+    background-color: #06BBCC;
+    top: 3px;
+    left: 50px;
+  }
+  .course-line2{
+    height: 2px;
+    width: 60px;
+    background-color: #06BBCC;
+    top: 11px;
+    left: 50px;
+  }
+  .course-line3{
+    height: 2px;
+    width: 40px;
+    background-color: #06BBCC;
+    top: 3px;
+    left: -90px;
+  }
+  .course-line4{
+    height: 2px;
+    width: 60px;
+    background-color: #06BBCC;
+    top: 11px;
+    left: -110px;
+  }
+  
+  .star{
+    color: #06BBCC;
+    font-size: 15px;
+  }
+  .rate{
+  color: #52565b;
+  font-size: 14px;
+  }
+  .c-footer{
+    font-size: 14px;
+    color: #52565b;
+    font-family: "heebo";
+  }
+  .Ico{
+    color: #06BBCC;
+    margin-bottom: 3.7px;
+    padding-right: 5px;
+    padding-left: 0;
+    font-size: 19px;
+  }
+  .card-btn1{
+    text-decoration: none;
+    background-color: #06BBCC;
+    border-radius: 30px 0 0 30px;
+    border: 0;
+  
+  }
+  .btn-sec{
+    top: 175px;
+  }
+  
+  .card-btn2{
+    border-radius: 0 30px 30px 0;
+    background-color: #06BBCC;
+    border: 0;
+  }
+  .card-btn1:hover{
+    background-color: #05d0e2;
+    border: none;
+  }
+  .card-btn2:hover{
+    background-color: #05d0e2;
+    border: none;
+  
+  }
+  
+  .sec4-h6{
+    color: #06BBCC;
+    margin-bottom: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+  }
+  .sec4-h1{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: #181d38;
+    margin-bottom: 30px;
+  }
+  @media screen and (max-width:1100px) {
+    .btn-sec{
+        top: 120px;
+    }
+    .sec4-cards{
+        margin-top: 10px;
+    }
+  }
+  @media screen and (max-width:350px) {
+    .btn-sec{
+        top: 90px;
+    }
+    .course-line1{
+        width: 20px;
+    }
+  }
+  .sec4-cards{
+    border-radius: 0%;
+    border: none;
+    background-color: #F0FBFC !important;
+    margin: 0 auto;
+   
+  
+  }
+  .course-text{
+    font-weight: bolder;
+    font-size: 60px;
+    color: #181d38;
+  }
+  
+  .popularc{
+    padding: 0px;
+  }
+  
+  
+  .course-list {
+    display: flex;
+    list-style: none; 
+    margin: 0 ;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 0%;
+  }
+  @media screen  and (max-width:992px) {
+    .course-list{
+      display: block;
+    }
+  }
+  .course-card{
+    border: none;
+    border-radius: 0%;
+    margin: 7px;
+  }
+  .course-name {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+  
+  }
+  
+  .course-price {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  
+  }
+  .addtocart-btn{
+    background-color: #06BBCC;
+    border-radius: 30px;
+    padding: 10px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .addtocart-btn:hover{
+    background-color: #32cfdd;
+    color: black;
+  }
+  /* cart */
+  .cart h1{
+    font-weight: bolder;
+    font-size: 50px;
+    font-family: 'Nunito', sans-serif;
+
+    color: rgb(22, 2, 41);
+  }
+  .cart-list {
+    list-style: none;
+    padding: 0;
+    
+  }
+ 
+  .cart-name {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+  
+  }
+  .cart-price {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+
+  }
+  .cart-total {
+    font-size: 23px;
+    font-weight: bold;
+  
+  }
+ 
+   .remove-btn{
+    background-color:#06BBCC; 
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    padding: 10px;
+    font-family: 'Nunito', sans-serif;
+  }
+  .remove-btn:hover{
+    background-color:#05d0e2;
+    color: black;
+  }
+  .cart h2{
+    font-weight: bolder;
+    font-family: 'Nunito', sans-serif;
+
+    font-size: 50px;
+    color: rgb(22, 2, 41);
+  }
+  .cart button{
+    background-color:#06BBCC; 
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+  
+  .cart button .link{
+    text-decoration: none;
+    color: white;
+    border: none;
+  }
+  .goback-btn{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 
+    bold;
+  }
+  
+  .cart button:hover{
+    background-color: #05d0e2;
+    color: black;
+  }
+  
+  .badge{
+    height: 20px;
+    width: 20px;
+    background-color: #06BBCC;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+    align-content: center;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    position: absolute;
+  }
+  
+  @media screen  and (max-width:288px) {
+    .addtocart-btn{
+      padding: 5px;
+      font-size: 14px;
+    }
+    .btn-sec{
+      margin-top: -40px;
+    }
+    .card-btn1{
+      border-radius: 30px;
+      margin: 3px;
+    }
+    .card-btn2{
+      border-radius: 30px;
+    }
+  }
+  
