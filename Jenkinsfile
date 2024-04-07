@@ -8,22 +8,6 @@ pipeline {
             }
         }
 
-        stage('Sonarqube Analysis') {
-            steps {
-                script {
-                    def scannerHome = tool 'sonar-scanner'
-                    withSonarQubeEnv('sonar') {
-                        sh """${scannerHome}/bin/sonar-scanner \
-                            -Dsonar.projectKey=react-application \
-                            -Dsonar.sources=. \
-                            -Dsonar.projectName='React Application' \
-                            -Dsonar.projectVersion='1.0' \
-                            -Dsonar.login='squ_feacd82942b3ffae6adfd4718db6e791edca237e'"""
-                    }
-                }
-            }
-        }
-
         stage('Docker Build & Push') {
             steps {
                 script {
