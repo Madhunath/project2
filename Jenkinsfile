@@ -1,6 +1,13 @@
 pipeline {
     agent any
 
+    environment {
+        DOCKER_REGISTRY = "madhunath"
+        IMAGE_NAME = "react-project"
+        BUILD_NUMBER = "${env.BUILD_NUMBER}"
+        UNIQUE_IMAGE_TAG = "${IMAGE_NAME}:${BUILD_NUMBER}"
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -11,10 +18,10 @@ pipeline {
         stage('Docker Build & Push') {
             steps {
                 script {
+                    sh "docker build -t ${UNIQUE_IMAGE_TAG} -f Dockerfile ."
+                    sh "docker tag ${UNIQUE_IMAGE_TAG} ${DOCKER_REGISTRY}/${UNIQUE_IMAGE_TAG}"
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
-                        sh "docker build -t react-application -f Dockerfile ."
-                        sh "docker tag react-application madhunath/react-application:latest"
-                        sh "docker push madhunath/react-application:latest"
+                        sh "docker push ${DOCKER_REGISTRY}/${UNIQUE_IMAGE_TAG}"
                     }
                 }
             }
@@ -23,9 +30,8 @@ pipeline {
         stage('Docker Deploy to Container') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
-                        sh "docker run -d --name react-app -p 3000:3000 madhunath/react-application:latest"
-                    }
+                    sh "docker ps -aqf name=react-app | xargs -r docker stop | xargs -r docker rm"
+                    sh "docker run -d --name react-app -p 3000:3000 ${DOCKER_REGISTRY}/${UNIQUE_IMAGE_TAG}"
                 }
             }
         }
