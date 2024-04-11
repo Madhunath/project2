@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     sh "docker ps -aqf name=react-project | xargs -r docker stop | xargs -r docker rm"
-                    sh "docker images -q ${DOCKER_REGISTRY}/${IMAGE_NAME} | xargs -r docker rmi"
+                    sh "docker images -q ${DOCKER_REGISTRY}/${IMAGE_NAME} | xargs -r docker rmi -f"
                     sh "docker run -d --name react-project -p 3000:3000 ${DOCKER_REGISTRY}/${UNIQUE_IMAGE_TAG}"
                 }
             }
