@@ -30,8 +30,8 @@ pipeline {
         stage('Docker Deploy to Container') {
             steps {
                 script {
-                    sh "docker ps -aqf name=react-app | xargs -r docker stop | xargs -r docker rm"
-                    sh "docker run -d --name react-app -p 3000:3000 ${DOCKER_REGISTRY}/${UNIQUE_IMAGE_TAG}"
+                    sh "docker ps -aqf name=react-project | xargs -r docker stop | xargs -r docker rm"
+                    sh "docker run -d --name react-project -p 3000:3000 ${DOCKER_REGISTRY}/${UNIQUE_IMAGE_TAG}"
                 }
             }
         }
